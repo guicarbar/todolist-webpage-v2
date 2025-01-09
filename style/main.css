@@ -126,6 +126,10 @@ form {
   overflow-y: scroll;
 }
 
+.line {
+  text-decoration: line-through;
+}
+
 
 /* footer */
 footer {
