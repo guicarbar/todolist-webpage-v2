@@ -6,7 +6,9 @@ import { deleteItem } from './removeItem.js'
 import { validCheckbox } from './checkbox.js'
 
 // function to create item
-function createItem(text) {
+function createItem(text, listNull) {
+  // var to list area
+  const areaList = document.getElementById("list-area")
 
   // create div main
   const div = document.createElement("div")
@@ -18,7 +20,7 @@ function createItem(text) {
   // delet button
   const btnDelete = document.createElement("button")
   btnDelete.innerHTML = `<i class="bi bi-trash-fill"></i>`
-  btnDelete.onclick = () => deleteItem(div)
+  btnDelete.onclick = () => deleteItem(div, areaList, listNull)
 
   // create input - checkbox
   const inputCheckbox = document.createElement("input")
@@ -31,6 +33,8 @@ function createItem(text) {
   div.appendChild(btnDelete)
 
   // add to list area
-  const areaList = document.getElementById("list-area")
   areaList.appendChild(div)
+
+  // to scroll
+  areaList.scrollTop = areaList.scrollHeight;
 }
